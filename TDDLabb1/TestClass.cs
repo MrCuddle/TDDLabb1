@@ -76,10 +76,65 @@ namespace TDDLabb1
         }
 
         [Test]
-        public void TextMixedValues()
+        public void TestNumbersEnrov()
+        {
+            string expected = "0123456789";
+            string toTest = rorovovaror.rovar.enrov("0123456789");
+            Assert.AreEqual(toTest, expected);
+        }
+
+        [Test]
+        public void TestNumbersDerov()
+        {
+            string expected = "0123456789";
+            string toTest = rorovovaror.rovar.derov("0123456789");
+            Assert.AreEqual(toTest, expected);
+        }
+
+        [Test]
+        public void TestEmptyStringEnrov()
+        {
+            string expected = "";
+            string toTest = rorovovaror.rovar.enrov("");
+            Assert.AreEqual(expected, toTest);
+        }
+
+        [Test]
+        public void TestEmptyStringDerov()
+        {
+            string expected = "";
+            string toTest = rorovovaror.rovar.derov("");
+            Assert.AreEqual(expected, toTest);
+        }
+
+        [Test]
+        public void TestEscapeCharEnrov()
+        {
+            string expected = '\n'.ToString();
+            string toTest = rorovovaror.rovar.enrov('\n'.ToString());
+            Assert.AreEqual(expected, toTest);
+        }
+
+        [Test]
+        public void TestEscapeCharDerov()
+        {
+            string expected = '\n'.ToString();
+            string toTest = rorovovaror.rovar.derov('\n'.ToString());
+            Assert.AreEqual(expected, toTest);
+        }
+
+        [Test]
+        public void TextMixedValuesEnrov()
         {
             string toTest = rorovovaror.rovar.enrov("SimonDahlberg89@gmail.com");
             Assert.AreEqual(toTest, "SOSimomononDODahohlolboberorgog89@gogmomailol.cocomom");
+        }
+
+        [Test]
+        public void TextMixedValuesDerov()
+        {
+            string toTest = rorovovaror.rovar.derov("SOSimomononDODahohlolboberorgog89@gogmomailol.cocomom");
+            Assert.AreEqual(toTest, "SimonDahlberg89@gmail.com");
         }
     }
 }
